@@ -1,4 +1,4 @@
-package com.vending.videocontrol.video;
+package com.vending.videocontrol.video.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

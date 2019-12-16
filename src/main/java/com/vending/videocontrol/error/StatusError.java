@@ -7,12 +7,12 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class StatusErrorDTO {
+public class StatusError {
 
   private String status;
   private String error;
 
-  public StatusErrorDTO(String error) {
+  public StatusError(String error) {
     this.status = "error";
     this.error = error;
   }
