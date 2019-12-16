@@ -1,6 +1,10 @@
 
 import React, { Component } from 'react';
 import {Form, Col, Button, Row} from 'react-bootstrap';
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import {addNewVideo} from "../actions/addNewVideo";
+import classnames from "classnames";
 
 class SaveForm extends Component {
   constructor(){
@@ -23,7 +27,8 @@ class SaveForm extends Component {
       length: this.state.length,
       description: this.state.description
     };
-    console.log(newVideo);
+    // console.log(newVideo);
+    this.props.addNewVideo(newVideo, this.props.history);
   } 
 
   render() { 
@@ -69,4 +74,13 @@ class SaveForm extends Component {
   }
 }
 
-export default SaveForm;
+SaveForm.propTypes = {
+  addNewVideo: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired    
+}
+
+const mapStateToProps = state => ({
+  errors: state.errors
+})
+
+export default connect(mapStateToProps, {addNewVideo}) (SaveForm);
