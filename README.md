@@ -3,22 +3,24 @@
 `Spring .\src\main\java\com\vending\videocontrol\`
 `React .\videocontrol\src\main\webapp\reactjs`
 
-###Environmental variables:
-|Var_Name | Value|
-|------------ | -------------|
-|DATASOURCE_URL | DATASOURCE_URL=jdbc:mysql://localhost:3306/{your database name}?serverTimezone=UTC|
-|DATASOURCE_USERNAME | *your local mysql username*|
-|DATASOURCE_PASSWORD | *your local mysql password*|
-|HIBERNATE_DIALECT | org.hibernate.dialect.MySQL5Dialect|
+##Environmental variables:
+**Database connection**
 
-###Start Spring
+| Var_Name | Value |
+| --------- | ----- |
+|DATASOURCE_URL | jdbc:mysql://localhost:3306/{your database name}?serverTimezone=UTC |
+|DATASOURCE_USERNAME | *your local mysql username* |
+|DATASOURCE_PASSWORD | *your local mysql password* |
+|HIBERNATE_DIALECT | org.hibernate.dialect.MySQL5Dialect |
+
+##Start Spring
 `.\src\main\java\com\vending\videocontrol\VideoControlApplication.java`
 
-###StrartReact
+##StrartReact
 `.\videocontrol\src\main\webapp\reactjs`
 `npm start`
 
-###APIs
+##APIs
 **GET** http://localhost:8080/videos
    e.g. response 
    ```json
