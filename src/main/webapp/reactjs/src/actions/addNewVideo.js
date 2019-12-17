@@ -1,5 +1,5 @@
 import axios from "axios";
-import {GET_ERRORS} from './types';
+import {GET_ERRORS, GET_VIDEOS} from './types';
 
 export const addNewVideo = (new_video, history) => async dispatch => {
     //await axios.post("http://localhost:8080/video/save", new_video)
@@ -26,5 +26,14 @@ export const addNewVideo = (new_video, history) => async dispatch => {
         type:GET_ERRORS,
         payload:error.response.data 
       })
+      console.log(error.response.data);
     }    
 };
+
+export const getAllVideos = () => async dispatch => {
+  const res = await axios.get("http://localhost:8080/videos")
+  dispatch({
+    type:GET_VIDEOS,
+    payload:res.data
+  })
+}

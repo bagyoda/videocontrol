@@ -12,11 +12,19 @@ class SaveForm extends Component {
     this.state = {
       name: "",
       length: "",
-      description: ""
+      description: "",
+      errors: {}
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors:nextProps.errors });
+    }
+  }
+
   onChange(e){
     this.setState({[e.target.name]: e.target.value})
   }
@@ -27,11 +35,10 @@ class SaveForm extends Component {
       length: this.state.length,
       description: this.state.description
     };
-    // console.log(newVideo);
     this.props.addNewVideo(newVideo, this.props.history);
   } 
-
   render() { 
+    const {errors} = this.state; 
     return(
       <Form onSubmit={this.onSubmit}>
         <Form.Group>
@@ -52,6 +59,7 @@ class SaveForm extends Component {
                 value={this.state.length} 
                 onChange={this.onChange}
               />
+              <span class="error"><p id="length_error"></p></span>
             </Col>
           </Row>
           <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -67,7 +75,7 @@ class SaveForm extends Component {
           </Form.Group>
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Save
         </Button>
       </Form>
     );
@@ -81,6 +89,6 @@ SaveForm.propTypes = {
 
 const mapStateToProps = state => ({
   errors: state.errors
-})
+}); 
 
 export default connect(mapStateToProps, {addNewVideo}) (SaveForm);
