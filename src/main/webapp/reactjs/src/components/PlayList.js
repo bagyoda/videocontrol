@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Table} from 'react-bootstrap';
+import {connect} from 'react-redux';
+
 
 class PlayList extends Component {
   render() {
