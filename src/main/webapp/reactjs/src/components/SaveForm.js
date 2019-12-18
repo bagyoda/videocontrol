@@ -13,6 +13,7 @@ class SaveForm extends Component {
       name: "",
       length: "",
       description: "",
+      playList: false,
       errors: {}
     };
     this.onChange = this.onChange.bind(this);
@@ -33,7 +34,8 @@ class SaveForm extends Component {
     const newVideo = {
       name: this.state.name,
       length: this.state.length,
-      description: this.state.description
+      description: this.state.description,
+      playList: this.state.playList
     };
     this.props.addNewVideo(newVideo, this.props.history);
   } 
@@ -47,7 +49,8 @@ class SaveForm extends Component {
               <Form.Control 
                 type="text" 
                 placeholder="... video name ..." 
-                name="name" value={this.state.name} 
+                name="name" 
+                value={this.state.name} 
                 onChange={this.onChange}
               />
             </Col>

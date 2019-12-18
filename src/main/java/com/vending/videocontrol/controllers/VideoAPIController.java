@@ -27,7 +27,7 @@ public class VideoAPIController {
   @GetMapping("/videos")
   public ResponseEntity getAllVideos() {
     try {
-      return ResponseEntity.status(200).body(new VideoListResponse(videoService.loadVideos()));
+      return ResponseEntity.status(200).body(videoService.loadVideos());
     } catch (Exception e) {
       return ResponseEntity.status(400).body(new StatusError(e.getMessage()));
     }

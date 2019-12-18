@@ -15,11 +15,13 @@ public class VideoResponse {
   private String name;
   private String length;
   private String description;
+  private String playList;
 
   public VideoResponse(Video video) {
     this.id = video.getId();
     this.name = video.getName();
     this.length = video.getLength();
     this.description = video.getDescription();
+    this.playList = String.valueOf(video.isPlayList());
   }
 }

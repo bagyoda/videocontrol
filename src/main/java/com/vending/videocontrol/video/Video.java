@@ -31,6 +31,6 @@ public class Video {
     this.length = videoDTO.getLength();
     this.description = videoDTO.getDescription();
     this.created = new Timestamp(System.currentTimeMillis());
-    this.playList = false;
+    this.playList = videoDTO.isPlayList();
   }
 }

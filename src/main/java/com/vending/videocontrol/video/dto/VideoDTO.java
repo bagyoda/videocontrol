@@ -21,4 +21,5 @@ public class VideoDTO {
   @NotBlank(message = "Please provide length")
   private String length;
   private String description;
+  private boolean playList;
 }

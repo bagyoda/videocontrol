@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import NavigationBar from "./components/NavigationBar";
 import Welcome from "./components/Welcome";
-import Footer from "./components/Footer";
 import SaveForm from "./components/SaveForm";
 
 import {Provider} from 'react-redux';
@@ -30,7 +29,6 @@ function App() {
               </Col>
             </Row>          
           </Container>
-        <Footer/>
       </Router>
     </Provider>  
   );

@@ -1,23 +1,18 @@
 import axios from "axios";
 import {GET_ERRORS} from './types';
 
-export const addNewVideo = (new_video, history) => async dispatch => {
-    //await axios.post("http://localhost:8080/video/save", new_video)
+export const updateVideo = (video_name) => async dispatch => {
     try {
       await axios({
-        method: 'post',
-        url: "http://localhost:8080/video/save",
+        method: 'put',
+        url: "http://localhost:8080/video/unset",
         headers: {}, 
         dataType: 'json',
         contentType: 'json',
         data: {
-          name: new_video.name,
-          length: new_video.length,
-          description: new_video.description,
-          playList: new_video.playList  
+          name: video_name
         }
       });
-      history.push("/");
       dispatch({
         type:GET_ERRORS,
         payload:{}
@@ -30,4 +25,3 @@ export const addNewVideo = (new_video, history) => async dispatch => {
       console.log(error.response.data);
     }    
 };
-
