@@ -25,7 +25,6 @@
    e.g. response 
    ```json
    {
-        "status": "ok",
             "videos": [
                 {
                     "id": 1,
